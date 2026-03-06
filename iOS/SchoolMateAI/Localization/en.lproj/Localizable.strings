@@ -1,0 +1,69 @@
+// Auth
+"auth_tagline" = "Your AI-powered school companion";
+"sign_in" = "Sign In";
+"create_account" = "Create Account";
+"full_name" = "Full Name";
+"email" = "Email";
+"password" = "Password";
+"or" = "OR";
+"already_have_account" = "Already have an account? Sign In";
+"no_account" = "Don't have an account? Sign Up";
+"biometric_reason" = "Authenticate to access SchoolMate AI";
+
+// Dashboard
+"dashboard" = "Home";
+"good_morning" = "Good morning";
+"good_afternoon" = "Good afternoon";
+"good_evening" = "Good evening";
+"todays_homework" = "Today's Homework";
+"no_homework_today" = "No homework due today 🎉";
+"add_homework" = "Add Homework";
+"start_study" = "Start Studying";
+"ask_ai" = "Ask AI";
+"homework" = "Homework";
+"settings" = "Settings";
+
+// Children
+"add_child" = "Add Child";
+"child_name" = "Child's Name";
+"grade" = "Grade";
+"school" = "School";
+"subjects" = "Subjects";
+
+// Homework
+"due_today" = "Due Today";
+"overdue" = "Overdue";
+"upcoming" = "Upcoming";
+"completed" = "Completed";
+"priority_high" = "High Priority";
+"priority_medium" = "Medium Priority";
+"priority_low" = "Low Priority";
+
+// Flashcards
+"flashcard_decks" = "Study Decks";
+"generate_with_ai" = "Generate with AI";
+"enter_topic" = "Enter a topic to study...";
+"generating_cards" = "Generating flashcards...";
+"cards_ready" = "Your flashcards are ready!";
+
+// AI Chat
+"ai_chat_placeholder" = "Ask about your child's studies...";
+"suggested_how_doing" = "How is %@ doing in school?";
+"suggested_study_tips" = "Study tips for %@";
+"new_conversation" = "New Conversation";
+
+// Settings
+"language" = "Language";
+"notifications" = "Notifications";
+"biometric_auth" = "Face ID / Touch ID";
+"premium" = "SchoolMate Premium";
+
+// Profile
+"profile" = "Profile";
+"manage_profile" = "Manage your profile";
+"member_since" = "Member Since";
+"save" = "Save";
+"profile_updated" = "Profile updated successfully";
+
+// Notifications
+"homework_reminder_title" = "📚 %@ has homework due tomorrow";

@@ -1,0 +1,69 @@
+// Auth
+"auth_tagline" = "Tu compañero escolar con inteligencia artificial";
+"sign_in" = "Iniciar Sesión";
+"create_account" = "Crear Cuenta";
+"full_name" = "Nombre Completo";
+"email" = "Correo Electrónico";
+"password" = "Contraseña";
+"or" = "O";
+"already_have_account" = "¿Ya tienes cuenta? Inicia sesión";
+"no_account" = "¿No tienes cuenta? Regístrate";
+"biometric_reason" = "Autentícate para acceder a SchoolMate AI";
+
+// Dashboard
+"dashboard" = "Inicio";
+"good_morning" = "Buenos días";
+"good_afternoon" = "Buenas tardes";
+"good_evening" = "Buenas noches";
+"todays_homework" = "Tareas de Hoy";
+"no_homework_today" = "No hay tareas por hoy 🎉";
+"add_homework" = "Agregar Tarea";
+"start_study" = "Iniciar Estudio";
+"ask_ai" = "Preguntar a IA";
+"homework" = "Tareas";
+"settings" = "Ajustes";
+
+// Children
+"add_child" = "Agregar Hijo/a";
+"child_name" = "Nombre del Niño/a";
+"grade" = "Grado";
+"school" = "Colegio";
+"subjects" = "Materias";
+
+// Homework
+"due_today" = "Para Hoy";
+"overdue" = "Atrasada";
+"upcoming" = "Próximas";
+"completed" = "Completadas";
+"priority_high" = "Prioridad Alta";
+"priority_medium" = "Prioridad Media";
+"priority_low" = "Prioridad Baja";
+
+// Flashcards
+"flashcard_decks" = "Mazos de Estudio";
+"generate_with_ai" = "Generar con IA";
+"enter_topic" = "Escribe un tema para estudiar...";
+"generating_cards" = "Generando flashcards...";
+"cards_ready" = "¡Tus flashcards están listas!";
+
+// AI Chat
+"ai_chat_placeholder" = "Pregunta sobre los estudios de tu hijo/a...";
+"suggested_how_doing" = "¿Cómo va %@ en la escuela?";
+"suggested_study_tips" = "Consejos de estudio para %@";
+"new_conversation" = "Nueva Conversación";
+
+// Settings
+"language" = "Idioma";
+"notifications" = "Notificaciones";
+"biometric_auth" = "Face ID / Touch ID";
+"premium" = "SchoolMate Premium";
+
+// Profile
+"profile" = "Perfil";
+"manage_profile" = "Administra tu perfil";
+"member_since" = "Miembro Desde";
+"save" = "Guardar";
+"profile_updated" = "Perfil actualizado correctamente";
+
+// Notifications
+"homework_reminder_title" = "📚 %@ tiene tarea pendiente para mañana";

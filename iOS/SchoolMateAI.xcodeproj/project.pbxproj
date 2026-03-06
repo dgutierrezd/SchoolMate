@@ -1,0 +1,726 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		02261578204D3E3BC04A9B69 /* Flashcard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDDE85B1257FCBDDD7F87FF4 /* Flashcard.swift */; };
+		04132011038182DEFDA000E5 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3048DA3E019D07EFA33EA00E /* DashboardView.swift */; };
+		085D3DE68CC7A5D942CE88CB /* MessageBubbleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07C088DEA326A5639ACF90C /* MessageBubbleView.swift */; };
+		0A5E19E2ADE4DBB05F082A64 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BB9DF84868B1D03B1872A0 /* RootView.swift */; };
+		1B2D510175D48BADE155553B /* GenerateFlashcardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE9E8884CAB86D88D9B25E0 /* GenerateFlashcardsView.swift */; };
+		1C40548CB06CF54E21B3F020 /* SubjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6ABCD76CB1C0D58750AF6E7 /* SubjectsView.swift */; };
+		1CA1B2F3D8E94A7B3C5F0E12 /* CalendarService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8F4A1E7B3D5E9F0A1C6D84 /* CalendarService.swift */; };
+		1CFCC996F06272F58D031D73 /* AIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13797468C9F99DA803FC3558 /* AIService.swift */; };
+		1E0D910CB722F207347C064C /* ChatMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474D7E8D735050EA7FE99259 /* ChatMessage.swift */; };
+		25068A6BE04FA64D72B8D2CA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19DABA2E9D510EEFE656D9D1 /* AppDelegate.swift */; };
+		28DE96426E7F204B1E0E3C67 /* AIChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DA866E72257604D484883B /* AIChatView.swift */; };
+		2A340FC9D33F20568A73B7D5 /* VoiceInputManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F1995D293D255D962851F7D /* VoiceInputManager.swift */; };
+		32799FC1ED5C62028C0DF1C1 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AC7EF7CD3FC55149C4DA68FC /* Localizable.strings */; };
+		3D613C075528D1DE667D62C7 /* Supabase in Frameworks */ = {isa = PBXBuildFile; productRef = 649FFF8E6761B7402AE8A664 /* Supabase */; };
+		3F63728C29374C8382FB5638 /* SchoolMateAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1080A7F2D9A7D870BAA194D /* SchoolMateAIApp.swift */; };
+		3FF47E49785212187C6D0107 /* Child.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2D2732A01ADFCF5A08E7AD2 /* Child.swift */; };
+		520626011F48A8904879E182 /* HomeworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A538EE3513D4A54F95203157 /* HomeworkService.swift */; };
+		546B6E9D4BE1822F2DEA2662 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C205DDF049728D83ECBF4605 /* AuthViewModel.swift */; };
+		58372F61C287D7A4283BEBBF /* AppTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7544F9BBB6034653B0AD6005 /* AppTheme.swift */; };
+		5C15C90EF64F430DDF24CAB7 /* FlashcardDeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D449F8F2F7956F1E1CDC0B1 /* FlashcardDeckView.swift */; };
+		5F61524FEF2C21F8B8F981A5 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB2DA89CE3F5C88F77BFF1A7 /* SignUpView.swift */; };
+		622A737AF74307A483235CCC /* ChildrenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FF4FD45B01E0CB6579B3742 /* ChildrenViewModel.swift */; };
+		722BC97499CD7ED3593D5709 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73EA5B26F485CEE8C747BFF5 /* AuthService.swift */; };
+		786EFCA114007D45F33F44B1 /* ChildProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5591C69EFC574C9C1D8C88F5 /* ChildProfileView.swift */; };
+		831045B4A2203AB1627C799F /* FlashcardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133619251A8C4ABC8D3F78D2 /* FlashcardService.swift */; };
+		898FACBF304B6C5DA94AF138 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B453A161CFA8D50CF894332 /* APIClient.swift */; };
+		8C25F53072D105DDE5534084 /* Typography.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B407078721665A353D4C99 /* Typography.swift */; };
+		8F03464EE4E3EE5E03987BE4 /* SubjectDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA92B37B47B7A381A21A53FC /* SubjectDetailView.swift */; };
+		994F4925F44F48B5259B70C2 /* NotificationSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F88E035093A21425ACB273F /* NotificationSettingsView.swift */; };
+		9B46BCF8001735B45DB4B080 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69827716EB6AD313AED4FC8C /* Colors.swift */; };
+		A2B3C4D5E6F70819A1B2C3D4 /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C4D5E6F70819A2B3C4D5E6 /* LocalizationManager.swift */; };
+		9FF570708CD68970EB0FD47E /* Homework.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99D1948E979A19922A320452 /* Homework.swift */; };
+		A13362E38078B457AF15714C /* SubjectsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DECD3E24B89571774B42E0 /* SubjectsViewModel.swift */; };
+		A9523F613879739C6D37F84E /* FlashcardsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6102A5A3D0CDD2BBA1611649 /* FlashcardsViewModel.swift */; };
+		A96623B619786CE024E8B825 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = A51CD478C467832D14B3727E /* Subject.swift */; };
+		B7D59F79907539D48DCDF74B /* LanguageSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA5B03AD34F686C9E684BA6 /* LanguageSettingsView.swift */; };
+		BA0707039E631626C50D7982 /* AIChatViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4031C320BBA1CE6C4E41D8F /* AIChatViewModel.swift */; };
+		C760CEECD7AFCE62C95ECFAA /* HomeworkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F264F9C4B9DC71B5D6333A /* HomeworkViewModel.swift */; };
+		CCD0041C7BE8ADE70DFBE390 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630B13ACE4DFC3B597A2A1EE /* LoginView.swift */; };
+		D1FBF62E722549D32C7E052A /* BiometricAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB725A2A46C2FE5BA9F563FC /* BiometricAuthManager.swift */; };
+		D7DA4354D99615F2F019930E /* HomeworkDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83042BE169D1DDC69B9C6C8A /* HomeworkDetailView.swift */; };
+		D7FCC777AE118183A339DCFC /* ChildrenService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BAAD5D2F18FAA3025F94F74 /* ChildrenService.swift */; };
+		DEE2F21AE39DF505D0FF881A /* FlashcardStudyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6E980556094143901386230 /* FlashcardStudyView.swift */; };
+		E4F44C75A11F9DD45DE29023 /* AddHomeworkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5A899473AD9F0D8259FBB87 /* AddHomeworkView.swift */; };
+		E5035DF56080B2E9C7D9C762 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF39E3D257182D2A8A8A24B /* User.swift */; };
+		EAE394CFD23B1B8030AD7D42 /* AddChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC7572E2E584E757B5D0E8 /* AddChildView.swift */; };
+		EE4FB827559EE8F98A39494C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6624D3933C0608C0E6D2C /* SettingsView.swift */; };
+		EF921FE521AFD52D962C08CA /* HomeworkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06256E178D9A8380BD064EDA /* HomeworkListView.swift */; };
+		F29F72C3F000DA673DA5A96B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E749F5EB3F2C055E4F09C7 /* TabBarView.swift */; };
+		F9036E21953EF2A08DE4FE98 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B069D1328C304EB1C193E1BB /* NotificationService.swift */; };
+		FE626FF1166E13904E317AC7 /* DashboardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E849E12AEEC797421F768FA /* DashboardViewModel.swift */; };
+		A1B2C3D4E5F60718091A2B3C /* SkeletonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E5F6071809A1B2C3D4E5F6 /* SkeletonView.swift */; };
+		B2C3D4E5F6071809A1B2C3D4 /* SplashScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F60718091A2B3CD4E5F607 /* SplashScreenView.swift */; };
+		C3D4E5F60718091A2B3CD4E5 /* ToastView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F60718091A2B3CD4E5F60718 /* ToastView.swift */; };
+		A1B2C3D4E5F60718091A2B4C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2C3D4E5F6071809A1B2C4D5 /* Assets.xcassets */; };
+		D4E5F60718091A2B3CD4E6F7 /* PrivacyPolicyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5F607180A2B3CD4E5F60719 /* PrivacyPolicyView.swift */; };
+		E5F607180A2B3CD4E5F6071A /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607180A2B3CD4E5F607181A /* TermsOfServiceView.swift */; };
+		F70819A2B3C4D5E6F70819A2 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0819A2B3C4D5E6F70819A2B3 /* ProfileView.swift */; };
+		0819A2B3C4D5E6F70819A2B4 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1819A2B3C4D5E6F70819A2B3 /* ProfileService.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		06256E178D9A8380BD064EDA /* HomeworkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkListView.swift; sourceTree = "<group>"; };
+		133619251A8C4ABC8D3F78D2 /* FlashcardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardService.swift; sourceTree = "<group>"; };
+		2C8F4A1E7B3D5E9F0A1C6D84 /* CalendarService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarService.swift; sourceTree = "<group>"; };
+		13797468C9F99DA803FC3558 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		13C6624D3933C0608C0E6D2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		19DABA2E9D510EEFE656D9D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		21FC7572E2E584E757B5D0E8 /* AddChildView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddChildView.swift; sourceTree = "<group>"; };
+		2B453A161CFA8D50CF894332 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		3048DA3E019D07EFA33EA00E /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
+		38BB9DF84868B1D03B1872A0 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		474D7E8D735050EA7FE99259 /* ChatMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessage.swift; sourceTree = "<group>"; };
+		49DA866E72257604D484883B /* AIChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatView.swift; sourceTree = "<group>"; };
+		4B100DBFC7CFD3F882FF8E90 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4D449F8F2F7956F1E1CDC0B1 /* FlashcardDeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardDeckView.swift; sourceTree = "<group>"; };
+		4F88E035093A21425ACB273F /* NotificationSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationSettingsView.swift; sourceTree = "<group>"; };
+		4FF4FD45B01E0CB6579B3742 /* ChildrenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenViewModel.swift; sourceTree = "<group>"; };
+		5591C69EFC574C9C1D8C88F5 /* ChildProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildProfileView.swift; sourceTree = "<group>"; };
+		6102A5A3D0CDD2BBA1611649 /* FlashcardsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardsViewModel.swift; sourceTree = "<group>"; };
+		630B13ACE4DFC3B597A2A1EE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		63E749F5EB3F2C055E4F09C7 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		69827716EB6AD313AED4FC8C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		B3C4D5E6F70819A2B3C4D5E6 /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
+		73EA5B26F485CEE8C747BFF5 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		7544F9BBB6034653B0AD6005 /* AppTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTheme.swift; sourceTree = "<group>"; };
+		7BAAD5D2F18FAA3025F94F74 /* ChildrenService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChildrenService.swift; sourceTree = "<group>"; };
+		7E849E12AEEC797421F768FA /* DashboardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewModel.swift; sourceTree = "<group>"; };
+		83042BE169D1DDC69B9C6C8A /* HomeworkDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkDetailView.swift; sourceTree = "<group>"; };
+		99D1948E979A19922A320452 /* Homework.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homework.swift; sourceTree = "<group>"; };
+		9AE9E8884CAB86D88D9B25E0 /* GenerateFlashcardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenerateFlashcardsView.swift; sourceTree = "<group>"; };
+		9F1995D293D255D962851F7D /* VoiceInputManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoiceInputManager.swift; sourceTree = "<group>"; };
+		A51CD478C467832D14B3727E /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subject.swift; sourceTree = "<group>"; };
+		A538EE3513D4A54F95203157 /* HomeworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkService.swift; sourceTree = "<group>"; };
+		A9F264F9C4B9DC71B5D6333A /* HomeworkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeworkViewModel.swift; sourceTree = "<group>"; };
+		AEA5B03AD34F686C9E684BA6 /* LanguageSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageSettingsView.swift; sourceTree = "<group>"; };
+		B069D1328C304EB1C193E1BB /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B1080A7F2D9A7D870BAA194D /* SchoolMateAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SchoolMateAIApp.swift; sourceTree = "<group>"; };
+		B11A20E4312A00B17802A775 /* SchoolMateAI.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SchoolMateAI.entitlements; sourceTree = "<group>"; };
+		B3B407078721665A353D4C99 /* Typography.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typography.swift; sourceTree = "<group>"; };
+		B47A3B059ABDCEBF47620EA9 /* SchoolMateAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SchoolMateAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5A899473AD9F0D8259FBB87 /* AddHomeworkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddHomeworkView.swift; sourceTree = "<group>"; };
+		C205DDF049728D83ECBF4605 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C2BF45D1689D82124FAD0E56 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C2D2732A01ADFCF5A08E7AD2 /* Child.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Child.swift; sourceTree = "<group>"; };
+		C4031C320BBA1CE6C4E41D8F /* AIChatViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIChatViewModel.swift; sourceTree = "<group>"; };
+		CF5FA71F7CDAC55C055EC954 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		CFF39E3D257182D2A8A8A24B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		D07C088DEA326A5639ACF90C /* MessageBubbleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageBubbleView.swift; sourceTree = "<group>"; };
+		DB725A2A46C2FE5BA9F563FC /* BiometricAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiometricAuthManager.swift; sourceTree = "<group>"; };
+		DDDE85B1257FCBDDD7F87FF4 /* Flashcard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flashcard.swift; sourceTree = "<group>"; };
+		E6ABCD76CB1C0D58750AF6E7 /* SubjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsView.swift; sourceTree = "<group>"; };
+		EB2DA89CE3F5C88F77BFF1A7 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		F5DECD3E24B89571774B42E0 /* SubjectsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsViewModel.swift; sourceTree = "<group>"; };
+		F6E980556094143901386230 /* FlashcardStudyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardStudyView.swift; sourceTree = "<group>"; };
+		FA92B37B47B7A381A21A53FC /* SubjectDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectDetailView.swift; sourceTree = "<group>"; };
+		D4E5F6071809A1B2C3D4E5F6 /* SkeletonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkeletonView.swift; sourceTree = "<group>"; };
+		E5F60718091A2B3CD4E5F607 /* SplashScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenView.swift; sourceTree = "<group>"; };
+		F60718091A2B3CD4E5F60718 /* ToastView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToastView.swift; sourceTree = "<group>"; };
+		B2C3D4E5F6071809A1B2C4D5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E5F607180A2B3CD4E5F60719 /* PrivacyPolicyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivacyPolicyView.swift; sourceTree = "<group>"; };
+		F607180A2B3CD4E5F607181A /* TermsOfServiceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfServiceView.swift; sourceTree = "<group>"; };
+		0819A2B3C4D5E6F70819A2B3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		1819A2B3C4D5E6F70819A2B3 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		72E909A1CF2D0ED6A5C53B0E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D613C075528D1DE667D62C7 /* Supabase in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		008BDBB33082F140A3748034 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				38BB9DF84868B1D03B1872A0 /* RootView.swift */,
+				E5F60718091A2B3CD4E5F607 /* SplashScreenView.swift */,
+				63E749F5EB3F2C055E4F09C7 /* TabBarView.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		05A136B8ABF9890F3B8F32A4 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				AC7EF7CD3FC55149C4DA68FC /* Localizable.strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		05B99B2D8C184CF220BDBFDA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B47A3B059ABDCEBF47620EA9 /* SchoolMateAI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		127A3F453200A64E6959BAE6 /* AIChat */ = {
+			isa = PBXGroup;
+			children = (
+				49DA866E72257604D484883B /* AIChatView.swift */,
+				C4031C320BBA1CE6C4E41D8F /* AIChatViewModel.swift */,
+				D07C088DEA326A5639ACF90C /* MessageBubbleView.swift */,
+				9F1995D293D255D962851F7D /* VoiceInputManager.swift */,
+			);
+			path = AIChat;
+			sourceTree = "<group>";
+		};
+		16F57FD6E2A33CE82485503E /* SchoolMateAI */ = {
+			isa = PBXGroup;
+			children = (
+				B11A20E4312A00B17802A775 /* SchoolMateAI.entitlements */,
+				D65D7F9C6BC6227653915C97 /* App */,
+				ED2BBDEF020559589A2AFAD2 /* Core */,
+				2E131CE0520C841586E509B6 /* Features */,
+				05A136B8ABF9890F3B8F32A4 /* Localization */,
+				1892F2CBEB0F703DFFA1A660 /* Models */,
+				83BC172B7E518079A7626E0C /* Resources */,
+				1ED4CAB06233B8815B690B98 /* Services */,
+			);
+			path = SchoolMateAI;
+			sourceTree = "<group>";
+		};
+		1892F2CBEB0F703DFFA1A660 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				474D7E8D735050EA7FE99259 /* ChatMessage.swift */,
+				C2D2732A01ADFCF5A08E7AD2 /* Child.swift */,
+				DDDE85B1257FCBDDD7F87FF4 /* Flashcard.swift */,
+				99D1948E979A19922A320452 /* Homework.swift */,
+				A51CD478C467832D14B3727E /* Subject.swift */,
+				CFF39E3D257182D2A8A8A24B /* User.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1ED4CAB06233B8815B690B98 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				13797468C9F99DA803FC3558 /* AIService.swift */,
+				2B453A161CFA8D50CF894332 /* APIClient.swift */,
+				73EA5B26F485CEE8C747BFF5 /* AuthService.swift */,
+				2C8F4A1E7B3D5E9F0A1C6D84 /* CalendarService.swift */,
+				7BAAD5D2F18FAA3025F94F74 /* ChildrenService.swift */,
+				133619251A8C4ABC8D3F78D2 /* FlashcardService.swift */,
+				A538EE3513D4A54F95203157 /* HomeworkService.swift */,
+				B069D1328C304EB1C193E1BB /* NotificationService.swift */,
+				1819A2B3C4D5E6F70819A2B3 /* ProfileService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		2E131CE0520C841586E509B6 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				127A3F453200A64E6959BAE6 /* AIChat */,
+				9776643B395F86F47920380A /* Children */,
+				5C4F1A70A4F4C98669A58B99 /* Dashboard */,
+				716EA7CBB89C8970CBA31CE0 /* Flashcards */,
+				47F91854A3498CC0E1BCB2E2 /* Homework */,
+				DA9314351DB65B62121632A7 /* Settings */,
+				707099157C3ED1A02A4CB8E9 /* Subjects */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		47F91854A3498CC0E1BCB2E2 /* Homework */ = {
+			isa = PBXGroup;
+			children = (
+				B5A899473AD9F0D8259FBB87 /* AddHomeworkView.swift */,
+				83042BE169D1DDC69B9C6C8A /* HomeworkDetailView.swift */,
+				06256E178D9A8380BD064EDA /* HomeworkListView.swift */,
+				A9F264F9C4B9DC71B5D6333A /* HomeworkViewModel.swift */,
+			);
+			path = Homework;
+			sourceTree = "<group>";
+		};
+		4EB97945316340F33C3AC068 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				7544F9BBB6034653B0AD6005 /* AppTheme.swift */,
+				69827716EB6AD313AED4FC8C /* Colors.swift */,
+				B3C4D5E6F70819A2B3C4D5E6 /* LocalizationManager.swift */,
+				D4E5F6071809A1B2C3D4E5F6 /* SkeletonView.swift */,
+				F60718091A2B3CD4E5F60718 /* ToastView.swift */,
+				B3B407078721665A353D4C99 /* Typography.swift */,
+			);
+			path = Theme;
+			sourceTree = "<group>";
+		};
+		505FF5CD8119CFE86DA2D4FE /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				C205DDF049728D83ECBF4605 /* AuthViewModel.swift */,
+				DB725A2A46C2FE5BA9F563FC /* BiometricAuthManager.swift */,
+				630B13ACE4DFC3B597A2A1EE /* LoginView.swift */,
+				EB2DA89CE3F5C88F77BFF1A7 /* SignUpView.swift */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		5C4F1A70A4F4C98669A58B99 /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				3048DA3E019D07EFA33EA00E /* DashboardView.swift */,
+				7E849E12AEEC797421F768FA /* DashboardViewModel.swift */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		707099157C3ED1A02A4CB8E9 /* Subjects */ = {
+			isa = PBXGroup;
+			children = (
+				FA92B37B47B7A381A21A53FC /* SubjectDetailView.swift */,
+				E6ABCD76CB1C0D58750AF6E7 /* SubjectsView.swift */,
+				F5DECD3E24B89571774B42E0 /* SubjectsViewModel.swift */,
+			);
+			path = Subjects;
+			sourceTree = "<group>";
+		};
+		71425BE6D41C13B5273C4089 = {
+			isa = PBXGroup;
+			children = (
+				16F57FD6E2A33CE82485503E /* SchoolMateAI */,
+				05B99B2D8C184CF220BDBFDA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		716EA7CBB89C8970CBA31CE0 /* Flashcards */ = {
+			isa = PBXGroup;
+			children = (
+				4D449F8F2F7956F1E1CDC0B1 /* FlashcardDeckView.swift */,
+				F6E980556094143901386230 /* FlashcardStudyView.swift */,
+				6102A5A3D0CDD2BBA1611649 /* FlashcardsViewModel.swift */,
+				9AE9E8884CAB86D88D9B25E0 /* GenerateFlashcardsView.swift */,
+			);
+			path = Flashcards;
+			sourceTree = "<group>";
+		};
+		83BC172B7E518079A7626E0C /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B2C3D4E5F6071809A1B2C4D5 /* Assets.xcassets */,
+				CF5FA71F7CDAC55C055EC954 /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		9776643B395F86F47920380A /* Children */ = {
+			isa = PBXGroup;
+			children = (
+				21FC7572E2E584E757B5D0E8 /* AddChildView.swift */,
+				5591C69EFC574C9C1D8C88F5 /* ChildProfileView.swift */,
+				4FF4FD45B01E0CB6579B3742 /* ChildrenViewModel.swift */,
+			);
+			path = Children;
+			sourceTree = "<group>";
+		};
+		D65D7F9C6BC6227653915C97 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				19DABA2E9D510EEFE656D9D1 /* AppDelegate.swift */,
+				B1080A7F2D9A7D870BAA194D /* SchoolMateAIApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		DA9314351DB65B62121632A7 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AEA5B03AD34F686C9E684BA6 /* LanguageSettingsView.swift */,
+				4F88E035093A21425ACB273F /* NotificationSettingsView.swift */,
+				E5F607180A2B3CD4E5F60719 /* PrivacyPolicyView.swift */,
+				0819A2B3C4D5E6F70819A2B3 /* ProfileView.swift */,
+				13C6624D3933C0608C0E6D2C /* SettingsView.swift */,
+				F607180A2B3CD4E5F607181A /* TermsOfServiceView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		ED2BBDEF020559589A2AFAD2 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				505FF5CD8119CFE86DA2D4FE /* Authentication */,
+				008BDBB33082F140A3748034 /* Navigation */,
+				4EB97945316340F33C3AC068 /* Theme */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BA87265D5883B93224D5506B /* SchoolMateAI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6FEE4DCF4A4B149B4480CA7B /* Build configuration list for PBXNativeTarget "SchoolMateAI" */;
+			buildPhases = (
+				9EC9C45FD35405330384F301 /* Sources */,
+				EF458FFF66AF494DA2C07FAB /* Resources */,
+				72E909A1CF2D0ED6A5C53B0E /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SchoolMateAI;
+			packageProductDependencies = (
+				649FFF8E6761B7402AE8A664 /* Supabase */,
+			);
+			productName = SchoolMateAI;
+			productReference = B47A3B059ABDCEBF47620EA9 /* SchoolMateAI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EAB4875B8E996E96108A6449 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					BA87265D5883B93224D5506B = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1F80988E09D3C2FFB00F96F4 /* Build configuration list for PBXProject "SchoolMateAI" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+				es,
+			);
+			mainGroup = 71425BE6D41C13B5273C4089;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				085016CF2BE2729261657D37 /* XCRemoteSwiftPackageReference "supabase-swift" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 05B99B2D8C184CF220BDBFDA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BA87265D5883B93224D5506B /* SchoolMateAI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF458FFF66AF494DA2C07FAB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				32799FC1ED5C62028C0DF1C1 /* Localizable.strings in Resources */,
+				A1B2C3D4E5F60718091A2B4C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9EC9C45FD35405330384F301 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				28DE96426E7F204B1E0E3C67 /* AIChatView.swift in Sources */,
+				BA0707039E631626C50D7982 /* AIChatViewModel.swift in Sources */,
+				1CFCC996F06272F58D031D73 /* AIService.swift in Sources */,
+				898FACBF304B6C5DA94AF138 /* APIClient.swift in Sources */,
+				EAE394CFD23B1B8030AD7D42 /* AddChildView.swift in Sources */,
+				E4F44C75A11F9DD45DE29023 /* AddHomeworkView.swift in Sources */,
+				25068A6BE04FA64D72B8D2CA /* AppDelegate.swift in Sources */,
+				58372F61C287D7A4283BEBBF /* AppTheme.swift in Sources */,
+				722BC97499CD7ED3593D5709 /* AuthService.swift in Sources */,
+				546B6E9D4BE1822F2DEA2662 /* AuthViewModel.swift in Sources */,
+				D1FBF62E722549D32C7E052A /* BiometricAuthManager.swift in Sources */,
+				1E0D910CB722F207347C064C /* ChatMessage.swift in Sources */,
+				3FF47E49785212187C6D0107 /* Child.swift in Sources */,
+				786EFCA114007D45F33F44B1 /* ChildProfileView.swift in Sources */,
+				D7FCC777AE118183A339DCFC /* ChildrenService.swift in Sources */,
+				622A737AF74307A483235CCC /* ChildrenViewModel.swift in Sources */,
+				1CA1B2F3D8E94A7B3C5F0E12 /* CalendarService.swift in Sources */,
+				9B46BCF8001735B45DB4B080 /* Colors.swift in Sources */,
+				A2B3C4D5E6F70819A1B2C3D4 /* LocalizationManager.swift in Sources */,
+				04132011038182DEFDA000E5 /* DashboardView.swift in Sources */,
+				FE626FF1166E13904E317AC7 /* DashboardViewModel.swift in Sources */,
+				02261578204D3E3BC04A9B69 /* Flashcard.swift in Sources */,
+				5C15C90EF64F430DDF24CAB7 /* FlashcardDeckView.swift in Sources */,
+				831045B4A2203AB1627C799F /* FlashcardService.swift in Sources */,
+				DEE2F21AE39DF505D0FF881A /* FlashcardStudyView.swift in Sources */,
+				A9523F613879739C6D37F84E /* FlashcardsViewModel.swift in Sources */,
+				1B2D510175D48BADE155553B /* GenerateFlashcardsView.swift in Sources */,
+				9FF570708CD68970EB0FD47E /* Homework.swift in Sources */,
+				D7DA4354D99615F2F019930E /* HomeworkDetailView.swift in Sources */,
+				EF921FE521AFD52D962C08CA /* HomeworkListView.swift in Sources */,
+				520626011F48A8904879E182 /* HomeworkService.swift in Sources */,
+				C760CEECD7AFCE62C95ECFAA /* HomeworkViewModel.swift in Sources */,
+				B7D59F79907539D48DCDF74B /* LanguageSettingsView.swift in Sources */,
+				CCD0041C7BE8ADE70DFBE390 /* LoginView.swift in Sources */,
+				085D3DE68CC7A5D942CE88CB /* MessageBubbleView.swift in Sources */,
+				F9036E21953EF2A08DE4FE98 /* NotificationService.swift in Sources */,
+				994F4925F44F48B5259B70C2 /* NotificationSettingsView.swift in Sources */,
+				D4E5F60718091A2B3CD4E6F7 /* PrivacyPolicyView.swift in Sources */,
+				E5F607180A2B3CD4E5F6071A /* TermsOfServiceView.swift in Sources */,
+				0A5E19E2ADE4DBB05F082A64 /* RootView.swift in Sources */,
+				3F63728C29374C8382FB5638 /* SchoolMateAIApp.swift in Sources */,
+				EE4FB827559EE8F98A39494C /* SettingsView.swift in Sources */,
+				A1B2C3D4E5F60718091A2B3C /* SkeletonView.swift in Sources */,
+				C3D4E5F60718091A2B3CD4E5 /* ToastView.swift in Sources */,
+				B2C3D4E5F6071809A1B2C3D4 /* SplashScreenView.swift in Sources */,
+				5F61524FEF2C21F8B8F981A5 /* SignUpView.swift in Sources */,
+				A96623B619786CE024E8B825 /* Subject.swift in Sources */,
+				8F03464EE4E3EE5E03987BE4 /* SubjectDetailView.swift in Sources */,
+				1C40548CB06CF54E21B3F020 /* SubjectsView.swift in Sources */,
+				A13362E38078B457AF15714C /* SubjectsViewModel.swift in Sources */,
+				F29F72C3F000DA673DA5A96B /* TabBarView.swift in Sources */,
+				8C25F53072D105DDE5534084 /* Typography.swift in Sources */,
+				E5035DF56080B2E9C7D9C762 /* User.swift in Sources */,
+				2A340FC9D33F20568A73B7D5 /* VoiceInputManager.swift in Sources */,
+				F70819A2B3C4D5E6F70819A2 /* ProfileView.swift in Sources */,
+				0819A2B3C4D5E6F70819A2B4 /* ProfileService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		AC7EF7CD3FC55149C4DA68FC /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C2BF45D1689D82124FAD0E56 /* en */,
+				4B100DBFC7CFD3F882FF8E90 /* es */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		17817C95B3BB417EB3172FF5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMM993JNZH;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schoolmateai.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		2A8FFB2D3465DCFF67EC07C9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		59ECF5FBC48B665F5915C217 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = UMM993JNZH;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.schoolmateai.app;
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 5.9;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		93B119F60E4D0B1F9DBEF1E5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F80988E09D3C2FFB00F96F4 /* Build configuration list for PBXProject "SchoolMateAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93B119F60E4D0B1F9DBEF1E5 /* Debug */,
+				2A8FFB2D3465DCFF67EC07C9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		6FEE4DCF4A4B149B4480CA7B /* Build configuration list for PBXNativeTarget "SchoolMateAI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				59ECF5FBC48B665F5915C217 /* Debug */,
+				17817C95B3BB417EB3172FF5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		085016CF2BE2729261657D37 /* XCRemoteSwiftPackageReference "supabase-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/supabase/supabase-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		649FFF8E6761B7402AE8A664 /* Supabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 085016CF2BE2729261657D37 /* XCRemoteSwiftPackageReference "supabase-swift" */;
+			productName = Supabase;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = EAB4875B8E996E96108A6449 /* Project object */;
+}
