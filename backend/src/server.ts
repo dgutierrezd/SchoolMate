@@ -13,6 +13,7 @@ import flashcardsRoutes from "./routes/flashcards";
 import aiChatRoutes from "./routes/ai-chat";
 import notificationsRoutes from "./routes/notifications";
 import profileRoutes from "./routes/profile";
+import legalRoutes from "./routes/legal";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -41,6 +42,7 @@ app.use("/flashcards", flashcardsRoutes);
 app.use("/ai", aiChatRoutes);
 app.use("/notifications", notificationsRoutes);
 app.use("/profile", profileRoutes);
+app.use("/legal", legalRoutes);
 
 // 404 handler
 app.use((_req, res) => {
