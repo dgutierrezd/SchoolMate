@@ -129,45 +129,55 @@ struct AIChatView: View {
                 }
 
                 // Input bar
-                HStack(spacing: AppSpacing.sm) {
-                    Button {
-                        showVoiceInput = true
-                    } label: {
-                        Image(systemName: "mic.fill")
-                            .foregroundStyle(Color.primaryPurple)
-                    }
-
-                    TextField(
-                        "ai_chat_placeholder".localized,
-                        text: $messageText,
-                        axis: .vertical
-                    )
-                    .lineLimit(1...4)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 8)
-                    .background(Color.backgroundGray)
-                    .clipShape(RoundedRectangle(cornerRadius: 20))
-
-                    Button {
-                        guard let child = selectedChild, !messageText.isEmpty else { return }
-                        let text = messageText
-                        messageText = ""
-                        Task {
-                            await viewModel.sendMessage(text, childId: child.id)
+                if selectedChild != nil {
+                    HStack(spacing: AppSpacing.sm) {
+                        Button {
+                            showVoiceInput = true
+                        } label: {
+                            Image(systemName: "mic.fill")
+                                .foregroundStyle(Color.primaryPurple)
                         }
-                    } label: {
-                        Image(systemName: "arrow.up.circle.fill")
-                            .font(.title2)
-                            .foregroundStyle(
-                                messageText.isEmpty || viewModel.isStreaming
-                                    ? Color.primaryPurple.opacity(0.3)
-                                    : Color.primaryPurple
-                            )
+
+                        TextField(
+                            "ai_chat_placeholder".localized,
+                            text: $messageText,
+                            axis: .vertical
+                        )
+                        .lineLimit(1...4)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Color.backgroundGray)
+                        .clipShape(RoundedRectangle(cornerRadius: 20))
+
+                        Button {
+                            guard let child = selectedChild, !messageText.isEmpty else { return }
+                            let text = messageText
+                            messageText = ""
+                            Task {
+                                await viewModel.sendMessage(text, childId: child.id)
+                            }
+                        } label: {
+                            Image(systemName: "arrow.up.circle.fill")
+                                .font(.title2)
+                                .foregroundStyle(
+                                    messageText.isEmpty || viewModel.isStreaming
+                                        ? Color.primaryPurple.opacity(0.3)
+                                        : Color.primaryPurple
+                                )
+                        }
+                        .disabled(messageText.isEmpty || viewModel.isStreaming)
                     }
-                    .disabled(messageText.isEmpty || viewModel.isStreaming)
+                    .padding(AppSpacing.md)
+                    .background(Color.cardBackground)
+                } else if !childrenVM.isLoading {
+                    VStack(spacing: AppSpacing.sm) {
+                        Text("Add a child first to start chatting with AI")
+                            .font(.appCaption)
+                            .foregroundStyle(.secondary)
+                    }
+                    .padding(AppSpacing.md)
+                    .background(Color.cardBackground)
                 }
-                .padding(AppSpacing.md)
-                .background(Color.cardBackground)
             }
             .background(Color.backgroundGray)
             .navigationTitle(LocalizedStringKey("ask_ai"))

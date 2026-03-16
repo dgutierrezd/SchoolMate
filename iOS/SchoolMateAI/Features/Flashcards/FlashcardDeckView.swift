@@ -56,22 +56,24 @@ struct FlashcardDeckView: View {
                         Image(systemName: "rectangle.stack")
                             .font(.system(size: 48))
                             .foregroundStyle(Color.primaryPurple.opacity(0.5))
-                        Text("No study decks yet")
+                        Text(selectedChild == nil ? "Add a child first to create study decks" : "No study decks yet")
                             .font(.appBody)
                             .foregroundStyle(.secondary)
-                        Button {
-                            showGenerate = true
-                        } label: {
-                            Label(
-                                "generate_with_ai".localized,
-                                systemImage: "sparkles"
-                            )
-                            .font(.appButtonLabel)
-                            .padding(.horizontal, 24)
-                            .padding(.vertical, 12)
-                            .background(Color.primaryPurple)
-                            .foregroundStyle(.white)
-                            .clipShape(Capsule())
+                        if selectedChild != nil {
+                            Button {
+                                showGenerate = true
+                            } label: {
+                                Label(
+                                    "generate_with_ai".localized,
+                                    systemImage: "sparkles"
+                                )
+                                .font(.appButtonLabel)
+                                .padding(.horizontal, 24)
+                                .padding(.vertical, 12)
+                                .background(Color.primaryPurple)
+                                .foregroundStyle(.white)
+                                .clipShape(Capsule())
+                            }
                         }
                     }
                     Spacer()
@@ -100,6 +102,7 @@ struct FlashcardDeckView: View {
                     } label: {
                         Image(systemName: "sparkles")
                     }
+                    .disabled(selectedChild == nil)
                 }
             }
             .sheet(isPresented: $showGenerate) {
@@ -108,6 +111,26 @@ struct FlashcardDeckView: View {
                         childId: child.id,
                         viewModel: viewModel
                     )
+                } else {
+                    NavigationStack {
+                        VStack(spacing: AppSpacing.md) {
+                            Image(systemName: "person.badge.plus")
+                                .font(.system(size: 48))
+                                .foregroundStyle(Color.primaryPurple.opacity(0.5))
+                            Text("Please add a child first to generate flashcards.")
+                                .font(.appBody)
+                                .foregroundStyle(.secondary)
+                                .multilineTextAlignment(.center)
+                        }
+                        .padding()
+                        .navigationTitle("Generate Flashcards")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            ToolbarItem(placement: .cancellationAction) {
+                                Button("Cancel") { showGenerate = false }
+                            }
+                        }
+                    }
                 }
             }
             .task {

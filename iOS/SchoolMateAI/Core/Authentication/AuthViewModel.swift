@@ -5,12 +5,33 @@ import LocalAuthentication
 class AuthViewModel: ObservableObject {
     @Published var isAuthenticated = false
     @Published var isLoading = false
+    @Published var isCheckingSession = true
     @Published var errorMessage: String?
 
     private let authService = AuthService.shared
 
     init() {
-        isAuthenticated = authService.isAuthenticated
+        // Don't trust a stored token at face value — validate it
+        isAuthenticated = false
+    }
+
+    /// Call once on app launch to verify the stored session is still valid.
+    func checkSession() async {
+        guard authService.isAuthenticated else {
+            isCheckingSession = false
+            return
+        }
+
+        do {
+            // Try refreshing the session to confirm it's valid
+            try await authService.refreshSession()
+            isAuthenticated = true
+        } catch {
+            // Token is expired/invalid — clear it and send to login
+            authService.clearSession()
+            isAuthenticated = false
+        }
+        isCheckingSession = false
     }
 
     func signIn(email: String, password: String) async {
@@ -41,11 +62,11 @@ class AuthViewModel: ObservableObject {
         isLoading = false
     }
 
-    func signInWithApple(idToken: String, nonce: String) async {
+    func signInWithApple(idToken: String, nonce: String, fullName: String? = nil) async {
         isLoading = true
         errorMessage = nil
         do {
-            _ = try await authService.signInWithApple(idToken: idToken, nonce: nonce)
+            _ = try await authService.signInWithApple(idToken: idToken, nonce: nonce, fullName: fullName)
             isAuthenticated = true
         } catch {
             errorMessage = error.localizedDescription

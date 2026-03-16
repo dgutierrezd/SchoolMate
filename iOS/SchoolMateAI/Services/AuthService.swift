@@ -30,8 +30,11 @@ class AuthService {
         return response
     }
 
-    func signInWithApple(idToken: String, nonce: String) async throws -> AuthResponse {
-        let body = ["idToken": idToken, "nonce": nonce]
+    func signInWithApple(idToken: String, nonce: String, fullName: String? = nil) async throws -> AuthResponse {
+        var body = ["idToken": idToken, "nonce": nonce]
+        if let fullName, !fullName.isEmpty {
+            body["fullName"] = fullName
+        }
         let response: AuthResponse = try await api.request(
             path: "/auth/apple",
             method: "POST",
@@ -64,5 +67,9 @@ class AuthService {
 
     var isAuthenticated: Bool {
         api.accessToken != nil
+    }
+
+    func clearSession() {
+        api.clearTokens()
     }
 }

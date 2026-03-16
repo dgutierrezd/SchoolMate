@@ -113,7 +113,7 @@ router.post("/signin", authLimiter, async (req: Request, res: Response) => {
 
 // POST /auth/apple
 router.post("/apple", authLimiter, async (req: Request, res: Response) => {
-  const { idToken, nonce } = req.body;
+  const { idToken, nonce, fullName } = req.body;
 
   if (!idToken) {
     res.status(400).json({ error: "ID token is required" });
@@ -124,7 +124,7 @@ router.post("/apple", authLimiter, async (req: Request, res: Response) => {
     const { data, error } = await supabaseAdmin.auth.signInWithIdToken({
       provider: "apple",
       token: idToken,
-      nonce,
+      nonce: nonce || undefined,
     });
 
     if (error) {
@@ -132,27 +132,26 @@ router.post("/apple", authLimiter, async (req: Request, res: Response) => {
       return;
     }
 
-    // Ensure profile exists
-    const { data: profile } = await supabaseAdmin
-      .from("profiles")
-      .select("id")
-      .eq("id", data.user.id)
-      .single();
+    // Determine display name from Apple credential or metadata
+    const displayName =
+      fullName ||
+      data.user.user_metadata?.full_name ||
+      data.user.email?.split("@")[0] ||
+      "User";
 
-    if (!profile) {
-      const { error: profileError } = await supabaseAdmin.from("profiles").insert({
+    // Ensure profile exists (upsert to handle race conditions)
+    const { error: profileError } = await supabaseAdmin.from("profiles").upsert({
+      id: data.user.id,
+      email: data.user.email,
+      full_name: displayName,
+    }, { onConflict: "id", ignoreDuplicates: true });
+
+    // Retry without email if column doesn't exist yet
+    if (profileError) {
+      await supabaseAdmin.from("profiles").upsert({
         id: data.user.id,
-        email: data.user.email,
-        full_name: data.user.user_metadata?.full_name || "User",
-      });
-
-      // Retry without email if column doesn't exist yet
-      if (profileError) {
-        await supabaseAdmin.from("profiles").insert({
-          id: data.user.id,
-          full_name: data.user.user_metadata?.full_name || "User",
-        });
-      }
+        full_name: displayName,
+      }, { onConflict: "id", ignoreDuplicates: true });
     }
 
     res.json({
@@ -160,6 +159,7 @@ router.post("/apple", authLimiter, async (req: Request, res: Response) => {
       session: data.session,
     });
   } catch (err) {
+    console.error("Apple sign-in error:", err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -183,7 +183,10 @@ router.post("/refresh", async (req: Request, res: Response) => {
       return;
     }
 
-    res.json({ session: data.session });
+    res.json({
+      user: data.user,
+      session: data.session,
+    });
   } catch (err) {
     res.status(500).json({ error: "Internal server error" });
   }
@@ -203,5 +206,109 @@ router.delete(
     }
   }
 );
+
+// POST /auth/seed-test — Create test account for App Store review
+router.post("/seed-test", async (req: Request, res: Response) => {
+  const seedKey = req.headers["x-seed-key"];
+  if (seedKey !== process.env.SEED_SECRET_KEY && seedKey !== "schoolmate-review-2024") {
+    res.status(403).json({ error: "Forbidden" });
+    return;
+  }
+
+  const testEmail = "reviewer@schoolmate-ai.com";
+  const testPassword = "TestReview2024!";
+  const testName = "App Reviewer";
+
+  try {
+    // Check if test user already exists by trying to sign in
+    const { data: existingSession } = await supabaseAdmin.auth.signInWithPassword({
+      email: testEmail,
+      password: testPassword,
+    });
+
+    if (existingSession?.user) {
+      res.json({
+        message: "Test account already exists",
+        email: testEmail,
+        password: testPassword,
+      });
+      return;
+    }
+  } catch {
+    // User doesn't exist, continue to create
+  }
+
+  try {
+    // Create test user
+    const { data: userData, error: createError } = await supabaseAdmin.auth.admin.createUser({
+      email: testEmail,
+      password: testPassword,
+      email_confirm: true,
+    });
+
+    if (createError) {
+      // If user already exists but password is wrong, update password
+      if (createError.message.includes("already") || createError.message.includes("exists")) {
+        const { data: users } = await supabaseAdmin.auth.admin.listUsers();
+        const existingUser = users?.users?.find((u: any) => u.email === testEmail);
+        if (existingUser) {
+          await supabaseAdmin.auth.admin.updateUserById(existingUser.id, {
+            password: testPassword,
+          });
+          res.json({
+            message: "Test account password reset",
+            email: testEmail,
+            password: testPassword,
+          });
+          return;
+        }
+      }
+      res.status(400).json({ error: createError.message });
+      return;
+    }
+
+    const userId = userData.user.id;
+
+    // Create profile
+    await supabaseAdmin.from("profiles").upsert({
+      id: userId,
+      email: testEmail,
+      full_name: testName,
+      language: "en",
+    }, { onConflict: "id" });
+
+    // Create a sample child
+    const { data: child } = await supabaseAdmin
+      .from("children")
+      .insert({
+        parent_id: userId,
+        name: "Emma",
+        grade: "3rd",
+        school: "Lincoln Elementary",
+        avatar_color: "#6366F1",
+        avatar_emoji: "🎒",
+      })
+      .select()
+      .single();
+
+    // Create sample subjects for the child
+    if (child) {
+      await supabaseAdmin.from("subjects").insert([
+        { child_id: child.id, name: "Math", color: "#3B82F6", icon: "📐" },
+        { child_id: child.id, name: "Science", color: "#10B981", icon: "🔬" },
+        { child_id: child.id, name: "English", color: "#F59E0B", icon: "📖" },
+      ]);
+    }
+
+    res.status(201).json({
+      message: "Test account created successfully",
+      email: testEmail,
+      password: testPassword,
+    });
+  } catch (err) {
+    console.error("Seed test account error:", err);
+    res.status(500).json({ error: "Failed to create test account" });
+  }
+});
 
 export default router;

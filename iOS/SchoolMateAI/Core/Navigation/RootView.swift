@@ -7,7 +7,10 @@ struct RootView: View {
     var body: some View {
         ZStack {
             Group {
-                if authViewModel.isAuthenticated {
+                if authViewModel.isCheckingSession {
+                    // Show nothing behind the splash while we validate
+                    Color.clear
+                } else if authViewModel.isAuthenticated {
                     TabBarView()
                         .transition(.opacity)
                 } else {
@@ -23,11 +26,14 @@ struct RootView: View {
                     .zIndex(1)
             }
         }
-        .onAppear {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2.2) {
-                withAnimation(.easeOut(duration: 0.5)) {
-                    showSplash = false
-                }
+        .task {
+            // Validate stored session while splash is visible
+            await authViewModel.checkSession()
+
+            // Keep splash for at least 1.5s for branding, then dismiss
+            try? await Task.sleep(nanoseconds: 1_500_000_000)
+            withAnimation(.easeOut(duration: 0.5)) {
+                showSplash = false
             }
         }
     }
