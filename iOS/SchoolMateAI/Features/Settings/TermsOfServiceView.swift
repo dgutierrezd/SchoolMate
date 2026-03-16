@@ -44,8 +44,8 @@ struct TermsOfServiceView: View {
                     PolicySection(
                         title: "3. User Accounts",
                         content: """
-                        To use the App, you must create an account using a valid email address and password, or \
-                        through Apple Sign In. You are responsible for:
+                        To use the App, you must create an account using a valid email address and password. \
+                        You are responsible for:
 
                         \u{2022} Maintaining the confidentiality of your account credentials
                         \u{2022} All activities that occur under your account

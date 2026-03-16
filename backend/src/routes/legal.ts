@@ -21,7 +21,7 @@ router.get("/privacy", (_req: Request, res: Response) => {
 
 <h2>2. Information We Collect</h2>
 <p>We collect the following types of information:</p>
-<p><strong>Account Information:</strong> When you create an account, we collect your name, email address, and authentication credentials. If you sign in with Apple, we receive your Apple ID token and, optionally, your name and email.</p>
+<p><strong>Account Information:</strong> When you create an account, we collect your name, email address, and authentication credentials.</p>
 <p><strong>Child Information:</strong> You may provide your child's name, grade level, school name, and avatar preferences. This information is used solely to personalize the educational experience.</p>
 <p><strong>Educational Data:</strong> Homework assignments, subjects, flashcard decks, study progress, and AI chat interactions related to your child's education.</p>
 <p><strong>Device Information:</strong> We may collect device type, operating system version, and unique device identifiers for app functionality and troubleshooting purposes.</p>
@@ -111,7 +111,7 @@ router.get("/terms", (_req: Request, res: Response) => {
 <p>The App is intended as a supplementary educational tool and does not replace professional educational guidance or instruction.</p>
 
 <h2>3. User Accounts</h2>
-<p>To use the App, you must create an account using a valid email address and password, or through Apple Sign In. You are responsible for:</p>
+<p>To use the App, you must create an account using a valid email address and password. You are responsible for:</p>
 <ul>
 <li>Maintaining the confidentiality of your account credentials</li>
 <li>All activities that occur under your account</li>

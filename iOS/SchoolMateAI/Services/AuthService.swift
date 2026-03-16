@@ -30,21 +30,6 @@ class AuthService {
         return response
     }
 
-    func signInWithApple(idToken: String, nonce: String, fullName: String? = nil) async throws -> AuthResponse {
-        var body = ["idToken": idToken, "nonce": nonce]
-        if let fullName, !fullName.isEmpty {
-            body["fullName"] = fullName
-        }
-        let response: AuthResponse = try await api.request(
-            path: "/auth/apple",
-            method: "POST",
-            body: body
-        )
-        api.accessToken = response.session.accessToken
-        api.refreshToken = response.session.refreshToken
-        return response
-    }
-
     func refreshSession() async throws {
         guard let token = api.refreshToken else {
             throw APIError.unauthorized

@@ -36,6 +36,4 @@ targets:
     entitlements:
       path: SchoolMateAI/SchoolMateAI.entitlements
       properties:
-        com.apple.developer.applesignin:
-          - Default
         aps-environment: development

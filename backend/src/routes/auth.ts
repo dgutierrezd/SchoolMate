@@ -111,59 +111,6 @@ router.post("/signin", authLimiter, async (req: Request, res: Response) => {
   }
 });
 
-// POST /auth/apple
-router.post("/apple", authLimiter, async (req: Request, res: Response) => {
-  const { idToken, nonce, fullName } = req.body;
-
-  if (!idToken) {
-    res.status(400).json({ error: "ID token is required" });
-    return;
-  }
-
-  try {
-    const { data, error } = await supabaseAdmin.auth.signInWithIdToken({
-      provider: "apple",
-      token: idToken,
-      nonce: nonce || undefined,
-    });
-
-    if (error) {
-      res.status(401).json({ error: error.message });
-      return;
-    }
-
-    // Determine display name from Apple credential or metadata
-    const displayName =
-      fullName ||
-      data.user.user_metadata?.full_name ||
-      data.user.email?.split("@")[0] ||
-      "User";
-
-    // Ensure profile exists (upsert to handle race conditions)
-    const { error: profileError } = await supabaseAdmin.from("profiles").upsert({
-      id: data.user.id,
-      email: data.user.email,
-      full_name: displayName,
-    }, { onConflict: "id", ignoreDuplicates: true });
-
-    // Retry without email if column doesn't exist yet
-    if (profileError) {
-      await supabaseAdmin.from("profiles").upsert({
-        id: data.user.id,
-        full_name: displayName,
-      }, { onConflict: "id", ignoreDuplicates: true });
-    }
-
-    res.json({
-      user: data.user,
-      session: data.session,
-    });
-  } catch (err) {
-    console.error("Apple sign-in error:", err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-});
-
 // POST /auth/refresh
 router.post("/refresh", async (req: Request, res: Response) => {
   const { refreshToken } = req.body;

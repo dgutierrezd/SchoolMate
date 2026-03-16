@@ -32,8 +32,7 @@ struct PrivacyPolicyView: View {
                         We collect the following types of information:
 
                         Account Information: When you create an account, we collect your name, email address, and \
-                        authentication credentials. If you sign in with Apple, we receive your Apple ID token and, \
-                        optionally, your name and email.
+                        authentication credentials.
 
                         Child Information: You may provide your child's name, grade level, school name, and avatar \
                         preferences. This information is used solely to personalize the educational experience.

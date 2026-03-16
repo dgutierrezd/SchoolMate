@@ -62,18 +62,6 @@ class AuthViewModel: ObservableObject {
         isLoading = false
     }
 
-    func signInWithApple(idToken: String, nonce: String, fullName: String? = nil) async {
-        isLoading = true
-        errorMessage = nil
-        do {
-            _ = try await authService.signInWithApple(idToken: idToken, nonce: nonce, fullName: fullName)
-            isAuthenticated = true
-        } catch {
-            errorMessage = error.localizedDescription
-        }
-        isLoading = false
-    }
-
     func authenticateWithBiometrics() async -> Bool {
         let context = LAContext()
         var error: NSError?

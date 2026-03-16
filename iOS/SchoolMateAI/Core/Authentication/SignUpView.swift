@@ -1,5 +1,4 @@
 import SwiftUI
-import AuthenticationServices
 
 struct SignUpView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
@@ -95,25 +94,6 @@ struct SignUpView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: AppCornerRadius.medium))
                             }
                             .disabled(!isFormValid || authViewModel.isLoading)
-
-                            // Divider
-                            HStack {
-                                Rectangle().fill(.white.opacity(0.3)).frame(height: 1)
-                                Text(LocalizedStringKey("or"))
-                                    .foregroundStyle(.white.opacity(0.6))
-                                    .font(.caption)
-                                Rectangle().fill(.white.opacity(0.3)).frame(height: 1)
-                            }
-
-                            // Apple Sign Up
-                            SignInWithAppleButton(.signUp) { request in
-                                request.requestedScopes = [.email, .fullName]
-                            } onCompletion: { result in
-                                handleAppleSignUp(result)
-                            }
-                            .signInWithAppleButtonStyle(.white)
-                            .frame(height: 50)
-                            .clipShape(RoundedRectangle(cornerRadius: AppCornerRadius.medium))
                         }
                         .padding(24)
                         .background(.ultraThinMaterial)
@@ -133,24 +113,6 @@ struct SignUpView: View {
                     }
                 }
             }
-        }
-    }
-
-    private func handleAppleSignUp(_ result: Result<ASAuthorization, Error>) {
-        switch result {
-        case .success(let authorization):
-            if let credential = authorization.credential as? ASAuthorizationAppleIDCredential,
-               let identityToken = credential.identityToken,
-               let tokenString = String(data: identityToken, encoding: .utf8) {
-                Task {
-                    await authViewModel.signInWithApple(
-                        idToken: tokenString,
-                        nonce: ""
-                    )
-                }
-            }
-        case .failure(let error):
-            authViewModel.errorMessage = error.localizedDescription
         }
     }
 }
