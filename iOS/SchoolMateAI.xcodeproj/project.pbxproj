@@ -522,7 +522,7 @@
 				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UMM993JNZH;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;
@@ -601,7 +601,7 @@
 				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = UMM993JNZH;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;
