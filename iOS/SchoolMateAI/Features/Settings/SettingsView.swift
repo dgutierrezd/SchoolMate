@@ -4,6 +4,8 @@ struct SettingsView: View {
     @EnvironmentObject var authViewModel: AuthViewModel
     @AppStorage("selectedLanguage") private var selectedLanguage = "en"
     @State private var biometricEnabled = BiometricAuthManager.isBiometricEnabled
+    @StateObject private var consentManager = AIConsentManager.shared
+    @State private var showRevokeConsentAlert = false
 
     var body: some View {
         NavigationStack {
@@ -71,6 +73,41 @@ struct SettingsView: View {
                     } label: {
                         Label("Manage Children", systemImage: "person.2.fill")
                     }
+                }
+
+                // AI Data Sharing
+                Section(header: Text("ai_data_sharing_section".localized)) {
+                    Toggle(isOn: Binding(
+                        get: { consentManager.hasGrantedConsent },
+                        set: { newValue in
+                            if newValue {
+                                consentManager.grantConsent()
+                            } else {
+                                showRevokeConsentAlert = true
+                            }
+                        }
+                    )) {
+                        Label("ai_data_sharing_toggle".localized, systemImage: "brain.head.profile")
+                    }
+                    .tint(Color.primaryPurple)
+
+                    if consentManager.hasGrantedConsent {
+                        Text("ai_data_sharing_on_description".localized)
+                            .font(.appCaption)
+                            .foregroundStyle(.secondary)
+                    } else {
+                        Text("ai_data_sharing_off_description".localized)
+                            .font(.appCaption)
+                            .foregroundStyle(.secondary)
+                    }
+                }
+                .alert("ai_data_sharing_revoke_title".localized, isPresented: $showRevokeConsentAlert) {
+                    Button("ai_data_sharing_revoke_confirm".localized, role: .destructive) {
+                        consentManager.revokeConsent()
+                    }
+                    Button("cancel".localized, role: .cancel) {}
+                } message: {
+                    Text("ai_data_sharing_revoke_message".localized)
                 }
 
                 // About

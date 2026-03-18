@@ -68,6 +68,34 @@
 // Notifications
 "homework_reminder_title" = "📚 %@ has homework due tomorrow";
 
+// AI Data Consent
+"ai_consent_nav_title" = "AI Data Sharing";
+"ai_consent_title" = "Before You Use AI Features";
+"ai_consent_subtitle" = "SchoolMate AI uses a third-party AI service to power its chat and flashcard features. We need your permission before sharing any personal data.";
+"ai_consent_data_title" = "What Data Is Shared";
+"ai_consent_data_body" = "When you use AI Chat or Generate Flashcards, the following data is sent to our AI service:\n• Your child's name, grade, and school\n• Homework titles and subject names\n• Messages you type in AI Chat\n• Topics you enter for flashcard generation";
+"ai_consent_recipient_title" = "Who Receives Your Data";
+"ai_consent_recipient_body" = "Your data is sent to OpenAI (openai.com) via SchoolMate AI's secure backend. OpenAI processes this data to generate educational responses and study materials on our behalf.";
+"ai_consent_use_title" = "How Your Data Is Used";
+"ai_consent_use_body" = "The data is used exclusively to generate AI-powered study content, personalized chat responses, and flashcard decks for your child's education. It is not used for advertising or sold to any other party.";
+"ai_consent_protection_title" = "Your Data Is Protected";
+"ai_consent_protection_body" = "OpenAI does not use API data to train its models. All data is transmitted over encrypted connections (TLS). You can revoke this permission at any time in Settings → AI Data Sharing.";
+"ai_consent_privacy_link" = "Read our full Privacy Policy";
+"ai_consent_agree" = "I Agree — Enable AI Features";
+"ai_consent_decline" = "No Thanks";
+"ai_consent_revoke_note" = "You can change this permission anytime in Settings → AI Data Sharing.";
+"ai_consent_required_cta" = "Enable AI Features — Tap to Review & Allow";
+
+// AI Data Sharing (Settings)
+"ai_data_sharing_section" = "AI Data Sharing";
+"ai_data_sharing_toggle" = "Share Data with AI Service";
+"ai_data_sharing_on_description" = "AI features are enabled. Your child's educational data is shared with OpenAI to power AI Chat and flashcard generation.";
+"ai_data_sharing_off_description" = "AI features are disabled. No data is sent to any AI service. Enable to use AI Chat and flashcard generation.";
+"ai_data_sharing_revoke_title" = "Disable AI Features?";
+"ai_data_sharing_revoke_message" = "Turning this off will stop all data from being sent to the AI service. AI Chat and flashcard generation will be unavailable until you re-enable this.";
+"ai_data_sharing_revoke_confirm" = "Disable AI Features";
+"cancel" = "Cancel";
+
 // Delete Account
 "danger_zone" = "Danger Zone";
 "delete_account_title" = "Delete Account";

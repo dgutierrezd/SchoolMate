@@ -8,7 +8,7 @@ struct PrivacyPolicyView: View {
                     .font(.appTitle)
                     .foregroundStyle(Color.textPrimary)
 
-                Text("Last updated: March 6, 2026")
+                Text("Last updated: March 18, 2026")
                     .font(.appCaption)
                     .foregroundStyle(.secondary)
 
@@ -84,17 +84,28 @@ struct PrivacyPolicyView: View {
                     )
 
                     PolicySection(
-                        title: "5. Data Sharing and Disclosure",
+                        title: "5. Data Sharing with Third-Party AI Service",
                         content: """
                         We do not sell, trade, or rent your personal information to third parties. We may share \
                         your information only in the following circumstances:
 
-                        Service Providers: We use trusted third-party services (such as Supabase for data storage \
-                        and authentication) that process data on our behalf under strict confidentiality agreements.
+                        Service Providers: We use Supabase for secure data storage and authentication. Supabase \
+                        processes data on our behalf under strict confidentiality and data processing agreements.
 
-                        AI Processing: Educational content and chat messages may be processed by AI services to \
-                        generate study materials and responses. This data is not used to train AI models and is \
-                        processed in accordance with our data processing agreements.
+                        Third-Party AI Processing (requires your explicit consent): To provide AI-powered features \
+                        — including the AI Chat assistant and AI-generated flashcards — SchoolMate AI sends certain \
+                        data to OpenAI (openai.com) via our secure backend. The data transmitted includes:
+
+                        • Your child's name, grade level, and school name
+                        • Homework assignment titles and subjects
+                        • Messages you type in the AI Chat
+                        • Flashcard topics you enter
+
+                        This data is sent solely to generate educational responses and study materials. OpenAI \
+                        does not use this data to train its models when accessed through the API, and we have a \
+                        Data Processing Agreement in place with OpenAI consistent with applicable privacy laws. \
+                        You will be asked for your explicit permission before any data is sent to OpenAI. You may \
+                        withdraw this permission at any time in Settings → AI Data Sharing.
 
                         Legal Requirements: We may disclose your information if required by law, court order, or \
                         governmental regulation, or if we believe disclosure is necessary to protect our rights, \

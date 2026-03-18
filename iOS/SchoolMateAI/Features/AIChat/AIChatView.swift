@@ -4,9 +4,11 @@ struct AIChatView: View {
     var preselectedChild: Child? = nil
     @StateObject private var viewModel = AIChatViewModel()
     @StateObject private var childrenVM = ChildrenViewModel()
+    @StateObject private var consentManager = AIConsentManager.shared
     @State private var selectedChild: Child?
     @State private var messageText = ""
     @State private var showVoiceInput = false
+    @State private var showAIConsent = false
 
     private var suggestedQuestions: [String] {
         guard let child = selectedChild else { return [] }
@@ -130,45 +132,66 @@ struct AIChatView: View {
 
                 // Input bar
                 if selectedChild != nil {
-                    HStack(spacing: AppSpacing.sm) {
-                        Button {
-                            showVoiceInput = true
-                        } label: {
-                            Image(systemName: "mic.fill")
-                                .foregroundStyle(Color.primaryPurple)
-                        }
-
-                        TextField(
-                            "ai_chat_placeholder".localized,
-                            text: $messageText,
-                            axis: .vertical
-                        )
-                        .lineLimit(1...4)
-                        .padding(.horizontal, 12)
-                        .padding(.vertical, 8)
-                        .background(Color.backgroundGray)
-                        .clipShape(RoundedRectangle(cornerRadius: 20))
-
-                        Button {
-                            guard let child = selectedChild, !messageText.isEmpty else { return }
-                            let text = messageText
-                            messageText = ""
-                            Task {
-                                await viewModel.sendMessage(text, childId: child.id)
+                    if consentManager.hasGrantedConsent {
+                        HStack(spacing: AppSpacing.sm) {
+                            Button {
+                                showVoiceInput = true
+                            } label: {
+                                Image(systemName: "mic.fill")
+                                    .foregroundStyle(Color.primaryPurple)
                             }
-                        } label: {
-                            Image(systemName: "arrow.up.circle.fill")
-                                .font(.title2)
-                                .foregroundStyle(
-                                    messageText.isEmpty || viewModel.isStreaming
-                                        ? Color.primaryPurple.opacity(0.3)
-                                        : Color.primaryPurple
-                                )
+
+                            TextField(
+                                "ai_chat_placeholder".localized,
+                                text: $messageText,
+                                axis: .vertical
+                            )
+                            .lineLimit(1...4)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 8)
+                            .background(Color.backgroundGray)
+                            .clipShape(RoundedRectangle(cornerRadius: 20))
+
+                            Button {
+                                guard let child = selectedChild, !messageText.isEmpty else { return }
+                                let text = messageText
+                                messageText = ""
+                                Task {
+                                    await viewModel.sendMessage(text, childId: child.id)
+                                }
+                            } label: {
+                                Image(systemName: "arrow.up.circle.fill")
+                                    .font(.title2)
+                                    .foregroundStyle(
+                                        messageText.isEmpty || viewModel.isStreaming
+                                            ? Color.primaryPurple.opacity(0.3)
+                                            : Color.primaryPurple
+                                    )
+                            }
+                            .disabled(messageText.isEmpty || viewModel.isStreaming)
                         }
-                        .disabled(messageText.isEmpty || viewModel.isStreaming)
+                        .padding(AppSpacing.md)
+                        .background(Color.cardBackground)
+                    } else {
+                        // Consent not yet granted — prompt the user before any data is sent
+                        Button {
+                            showAIConsent = true
+                        } label: {
+                            HStack(spacing: AppSpacing.sm) {
+                                Image(systemName: "hand.raised.fill")
+                                Text("ai_consent_required_cta".localized)
+                                    .font(.appBody)
+                                    .fontWeight(.medium)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(AppSpacing.md)
+                            .background(Color.primaryPurple)
+                            .foregroundStyle(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: AppCornerRadius.medium))
+                        }
+                        .padding(AppSpacing.md)
+                        .background(Color.cardBackground)
                     }
-                    .padding(AppSpacing.md)
-                    .background(Color.cardBackground)
                 } else if !childrenVM.isLoading {
                     VStack(spacing: AppSpacing.sm) {
                         Text("Add a child first to start chatting with AI")
@@ -205,16 +228,34 @@ struct AIChatView: View {
                     messageText = transcribedText
                 }
             }
+            .sheet(isPresented: $showAIConsent) {
+                AIDataConsentView { granted in
+                    showAIConsent = false
+                    // If consent was just granted, load history for the selected child
+                    if granted, let child = selectedChild {
+                        Task { await viewModel.loadHistory(childId: child.id) }
+                    }
+                }
+            }
             .task {
                 if let preselected = preselectedChild {
                     selectedChild = preselected
                     childrenVM.children = [preselected]
-                    await viewModel.loadHistory(childId: preselected.id)
+                    // Only load AI history once user has consented
+                    if consentManager.hasGrantedConsent {
+                        await viewModel.loadHistory(childId: preselected.id)
+                    } else {
+                        showAIConsent = true
+                    }
                 } else {
                     await childrenVM.loadChildren()
                     selectedChild = childrenVM.children.first
                     if let child = selectedChild {
-                        await viewModel.loadHistory(childId: child.id)
+                        if consentManager.hasGrantedConsent {
+                            await viewModel.loadHistory(childId: child.id)
+                        } else {
+                            showAIConsent = true
+                        }
                     }
                 }
             }

@@ -4,11 +4,13 @@ struct GenerateFlashcardsView: View {
     let childId: String
     @ObservedObject var viewModel: FlashcardsViewModel
     @StateObject private var subjectsVM = SubjectsViewModel()
+    @StateObject private var consentManager = AIConsentManager.shared
     @Environment(\.dismiss) private var dismiss
 
     @State private var topic = ""
     @State private var selectedSubjectId: String?
     @State private var cardCount = 10
+    @State private var showAIConsent = false
 
     var body: some View {
         NavigationStack {
@@ -72,16 +74,21 @@ struct GenerateFlashcardsView: View {
 
                 // Generate Button
                 Button {
-                    Task {
-                        await viewModel.generateFlashcards(
-                            childId: childId,
-                            subjectId: selectedSubjectId,
-                            topic: topic,
-                            count: cardCount
-                        )
-                        if viewModel.errorMessage == nil {
-                            dismiss()
+                    guard !topic.isEmpty else { return }
+                    if consentManager.hasGrantedConsent {
+                        Task {
+                            await viewModel.generateFlashcards(
+                                childId: childId,
+                                subjectId: selectedSubjectId,
+                                topic: topic,
+                                count: cardCount
+                            )
+                            if viewModel.errorMessage == nil {
+                                dismiss()
+                            }
                         }
+                    } else {
+                        showAIConsent = true
                     }
                 } label: {
                     HStack {
@@ -115,6 +122,25 @@ struct GenerateFlashcardsView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                }
+            }
+            .sheet(isPresented: $showAIConsent) {
+                AIDataConsentView { granted in
+                    showAIConsent = false
+                    // Immediately generate after the user grants consent
+                    if granted {
+                        Task {
+                            await viewModel.generateFlashcards(
+                                childId: childId,
+                                subjectId: selectedSubjectId,
+                                topic: topic,
+                                count: cardCount
+                            )
+                            if viewModel.errorMessage == nil {
+                                dismiss()
+                            }
+                        }
+                    }
                 }
             }
             .task {

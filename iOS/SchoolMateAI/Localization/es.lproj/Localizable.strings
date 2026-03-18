@@ -68,6 +68,34 @@
 // Notifications
 "homework_reminder_title" = "📚 %@ tiene tarea pendiente para mañana";
 
+// AI Data Consent
+"ai_consent_nav_title" = "Compartir Datos con IA";
+"ai_consent_title" = "Antes de Usar las Funciones de IA";
+"ai_consent_subtitle" = "SchoolMate AI utiliza un servicio de IA de terceros para potenciar el chat y las tarjetas de estudio. Necesitamos tu permiso antes de compartir datos personales.";
+"ai_consent_data_title" = "¿Qué Datos se Comparten?";
+"ai_consent_data_body" = "Al usar el Chat con IA o Generar Flashcards, los siguientes datos se envían a nuestro servicio de IA:\n• Nombre, grado y colegio de tu hijo/a\n• Títulos de tareas y nombres de materias\n• Mensajes que escribes en el Chat con IA\n• Temas que ingresas para generar flashcards";
+"ai_consent_recipient_title" = "¿Quién Recibe tus Datos?";
+"ai_consent_recipient_body" = "Tus datos se envían a OpenAI (openai.com) a través del servidor seguro de SchoolMate AI. OpenAI procesa estos datos para generar respuestas educativas y materiales de estudio en nuestro nombre.";
+"ai_consent_use_title" = "¿Cómo se Usan tus Datos?";
+"ai_consent_use_body" = "Los datos se usan exclusivamente para generar contenido de estudio con IA, respuestas personalizadas en el chat y mazos de flashcards para la educación de tu hijo/a. No se usan para publicidad ni se venden a terceros.";
+"ai_consent_protection_title" = "Tus Datos Están Protegidos";
+"ai_consent_protection_body" = "OpenAI no usa datos de la API para entrenar sus modelos. Todos los datos se transmiten con conexiones cifradas (TLS). Puedes revocar este permiso en cualquier momento en Ajustes → Compartir Datos con IA.";
+"ai_consent_privacy_link" = "Lee nuestra Política de Privacidad completa";
+"ai_consent_agree" = "Acepto — Activar Funciones de IA";
+"ai_consent_decline" = "No, Gracias";
+"ai_consent_revoke_note" = "Puedes cambiar este permiso en cualquier momento en Ajustes → Compartir Datos con IA.";
+"ai_consent_required_cta" = "Activar Funciones de IA — Toca para Revisar y Permitir";
+
+// AI Data Sharing (Settings)
+"ai_data_sharing_section" = "Compartir Datos con IA";
+"ai_data_sharing_toggle" = "Compartir Datos con Servicio de IA";
+"ai_data_sharing_on_description" = "Las funciones de IA están activadas. Los datos educativos de tu hijo/a se comparten con OpenAI para potenciar el Chat con IA y la generación de flashcards.";
+"ai_data_sharing_off_description" = "Las funciones de IA están desactivadas. No se envían datos a ningún servicio de IA. Actívalas para usar el Chat con IA y la generación de flashcards.";
+"ai_data_sharing_revoke_title" = "¿Desactivar Funciones de IA?";
+"ai_data_sharing_revoke_message" = "Al desactivar esto, se dejará de enviar datos al servicio de IA. El Chat con IA y la generación de flashcards no estarán disponibles hasta que lo vuelvas a activar.";
+"ai_data_sharing_revoke_confirm" = "Desactivar Funciones de IA";
+"cancel" = "Cancelar";
+
 // Delete Account
 "danger_zone" = "Zona de Peligro";
 "delete_account_title" = "Eliminar Cuenta";
