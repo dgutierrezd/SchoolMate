@@ -105,6 +105,21 @@ struct SettingsView: View {
                         }
                     }
                 }
+
+                // Danger Zone
+                Section(header: Text("danger_zone".localized)) {
+                    NavigationLink {
+                        DeleteAccountView()
+                    } label: {
+                        Label {
+                            Text("delete_account_title".localized)
+                                .foregroundStyle(Color.accentRed)
+                        } icon: {
+                            Image(systemName: "trash.fill")
+                                .foregroundStyle(Color.accentRed)
+                        }
+                    }
+                }
             }
             .scrollContentBackground(.hidden)
             .background(Color.backgroundGray)

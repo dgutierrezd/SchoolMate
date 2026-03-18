@@ -7,6 +7,7 @@ class AuthViewModel: ObservableObject {
     @Published var isLoading = false
     @Published var isCheckingSession = true
     @Published var errorMessage: String?
+    @Published var isDeletingAccount = false
 
     private let authService = AuthService.shared
 
@@ -88,5 +89,22 @@ class AuthViewModel: ObservableObject {
             // Clear local state even if server call fails
         }
         isAuthenticated = false
+    }
+
+    /// Permanently deletes the account. Returns `true` on success, `false` on failure.
+    /// On success, `isAuthenticated` is set to `false` so the app navigates to login.
+    func deleteAccount() async -> Bool {
+        isDeletingAccount = true
+        errorMessage = nil
+        do {
+            try await authService.deleteAccount()
+            isAuthenticated = false
+            isDeletingAccount = false
+            return true
+        } catch {
+            errorMessage = error.localizedDescription
+            isDeletingAccount = false
+            return false
+        }
     }
 }

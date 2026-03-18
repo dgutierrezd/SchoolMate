@@ -60,6 +60,7 @@
 		E5035DF56080B2E9C7D9C762 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFF39E3D257182D2A8A8A24B /* User.swift */; };
 		E5F607180A2B3CD4E5F6071A /* TermsOfServiceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F607180A2B3CD4E5F607181A /* TermsOfServiceView.swift */; };
 		EAE394CFD23B1B8030AD7D42 /* AddChildView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21FC7572E2E584E757B5D0E8 /* AddChildView.swift */; };
+		CC1A2B3D4E5F6071819A2B3C /* DeleteAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1B2C3D4E5F60718091A2B3 /* DeleteAccountView.swift */; };
 		EE4FB827559EE8F98A39494C /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13C6624D3933C0608C0E6D2C /* SettingsView.swift */; };
 		EF921FE521AFD52D962C08CA /* HomeworkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06256E178D9A8380BD064EDA /* HomeworkListView.swift */; };
 		F29F72C3F000DA673DA5A96B /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63E749F5EB3F2C055E4F09C7 /* TabBarView.swift */; };
@@ -73,6 +74,7 @@
 		0819A2B3C4D5E6F70819A2B3 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 		133619251A8C4ABC8D3F78D2 /* FlashcardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashcardService.swift; sourceTree = "<group>"; };
 		13797468C9F99DA803FC3558 /* AIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AIService.swift; sourceTree = "<group>"; };
+		AA1B2C3D4E5F60718091A2B3 /* DeleteAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountView.swift; sourceTree = "<group>"; };
 		13C6624D3933C0608C0E6D2C /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		1819A2B3C4D5E6F70819A2B3 /* ProfileService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		19DABA2E9D510EEFE656D9D1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		DA9314351DB65B62121632A7 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				AA1B2C3D4E5F60718091A2B3 /* DeleteAccountView.swift */,
 				AEA5B03AD34F686C9E684BA6 /* LanguageSettingsView.swift */,
 				4F88E035093A21425ACB273F /* NotificationSettingsView.swift */,
 				E5F607180A2B3CD4E5F60719 /* PrivacyPolicyView.swift */,
@@ -482,6 +485,7 @@
 				E5F607180A2B3CD4E5F6071A /* TermsOfServiceView.swift in Sources */,
 				0A5E19E2ADE4DBB05F082A64 /* RootView.swift in Sources */,
 				3F63728C29374C8382FB5638 /* SchoolMateAIApp.swift in Sources */,
+				CC1A2B3D4E5F6071819A2B3C /* DeleteAccountView.swift in Sources */,
 				EE4FB827559EE8F98A39494C /* SettingsView.swift in Sources */,
 				A1B2C3D4E5F60718091A2B3C /* SkeletonView.swift in Sources */,
 				C3D4E5F60718091A2B3CD4E5 /* ToastView.swift in Sources */,
@@ -522,7 +526,7 @@
 				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = UMM993JNZH;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;
@@ -601,7 +605,7 @@
 				CODE_SIGN_ENTITLEMENTS = SchoolMateAI/SchoolMateAI.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 4;
 				DEVELOPMENT_TEAM = UMM993JNZH;
 				GENERATE_INFOPLIST_FILE = NO;
 				INFOPLIST_FILE = SchoolMateAI/Resources/Info.plist;

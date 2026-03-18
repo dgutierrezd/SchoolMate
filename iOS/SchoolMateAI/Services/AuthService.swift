@@ -50,6 +50,13 @@ class AuthService {
         api.clearTokens()
     }
 
+    /// Permanently deletes the authenticated user's account and all associated data.
+    /// Clears local tokens regardless of server response so the user is always logged out.
+    func deleteAccount() async throws {
+        try await api.requestVoid(path: "/auth/account", method: "DELETE")
+        api.clearTokens()
+    }
+
     var isAuthenticated: Bool {
         api.accessToken != nil
     }

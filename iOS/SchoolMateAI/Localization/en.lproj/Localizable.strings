@@ -67,3 +67,22 @@
 
 // Notifications
 "homework_reminder_title" = "📚 %@ has homework due tomorrow";
+
+// Delete Account
+"danger_zone" = "Danger Zone";
+"delete_account_title" = "Delete Account";
+"delete_account_subtitle" = "This will permanently delete your account and all data associated with it.";
+"delete_account_what_deleted" = "The following will be permanently deleted";
+"delete_consequence_profile" = "Your profile and account information";
+"delete_consequence_children" = "All children profiles";
+"delete_consequence_homework" = "All homework assignments";
+"delete_consequence_flashcards" = "All flashcard decks and study progress";
+"delete_consequence_chats" = "All AI chat history";
+"delete_account_permanent_notice" = "Account deletion is permanent and cannot be undone. You will not be able to recover your data after deletion.";
+"delete_account_action" = "Delete My Account";
+"delete_account_cancel" = "Cancel";
+"delete_account_deleting" = "Deleting Account...";
+"delete_account_confirm_title" = "Are you sure?";
+"delete_account_confirm_message" = "This action is permanent. Your account and all data will be deleted immediately and cannot be recovered.";
+"delete_account_confirm_action" = "Yes, Delete My Account";
+"delete_account_error" = "Failed to delete account. Please try again.";

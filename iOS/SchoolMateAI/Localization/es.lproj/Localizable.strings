@@ -67,3 +67,22 @@
 
 // Notifications
 "homework_reminder_title" = "📚 %@ tiene tarea pendiente para mañana";
+
+// Delete Account
+"danger_zone" = "Zona de Peligro";
+"delete_account_title" = "Eliminar Cuenta";
+"delete_account_subtitle" = "Esto eliminará permanentemente tu cuenta y todos los datos asociados.";
+"delete_account_what_deleted" = "Lo siguiente será eliminado permanentemente";
+"delete_consequence_profile" = "Tu perfil e información de cuenta";
+"delete_consequence_children" = "Todos los perfiles de hijos/as";
+"delete_consequence_homework" = "Todas las tareas escolares";
+"delete_consequence_flashcards" = "Todos los mazos de flashcards y progreso de estudio";
+"delete_consequence_chats" = "Todo el historial de chat con IA";
+"delete_account_permanent_notice" = "La eliminación de cuenta es permanente e irreversible. No podrás recuperar tus datos después de la eliminación.";
+"delete_account_action" = "Eliminar Mi Cuenta";
+"delete_account_cancel" = "Cancelar";
+"delete_account_deleting" = "Eliminando Cuenta...";
+"delete_account_confirm_title" = "¿Estás seguro/a?";
+"delete_account_confirm_message" = "Esta acción es permanente. Tu cuenta y todos tus datos serán eliminados de inmediato y no podrán recuperarse.";
+"delete_account_confirm_action" = "Sí, Eliminar Mi Cuenta";
+"delete_account_error" = "No se pudo eliminar la cuenta. Por favor intenta de nuevo.";

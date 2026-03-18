@@ -154,6 +154,62 @@ router.delete(
   }
 );
 
+// DELETE /auth/account — Permanently delete the authenticated user's account and all associated data
+router.delete(
+  "/account",
+  authMiddleware,
+  async (req: Request, res: Response) => {
+    const authReq = req as AuthRequest;
+    const userId = authReq.user.id;
+
+    try {
+      // Delete in dependency order to respect any FK constraints that may exist.
+      // subjects belong to children, so delete subjects first.
+      const { data: children } = await supabaseAdmin
+        .from("children")
+        .select("id")
+        .eq("parent_id", userId);
+
+      if (children && children.length > 0) {
+        const childIds = children.map((c: { id: string }) => c.id);
+
+        // Delete subjects tied to these children
+        await supabaseAdmin.from("subjects").delete().in("child_id", childIds);
+
+        // Delete flashcard decks tied to these children
+        await supabaseAdmin
+          .from("flashcard_decks")
+          .delete()
+          .in("child_id", childIds);
+      }
+
+      // Delete homework (parent_id scoped)
+      await supabaseAdmin.from("homework").delete().eq("parent_id", userId);
+
+      // Delete children rows
+      await supabaseAdmin.from("children").delete().eq("parent_id", userId);
+
+      // Delete profile
+      await supabaseAdmin.from("profiles").delete().eq("id", userId);
+
+      // Finally, delete the Supabase auth user — this is irreversible
+      const { error: deleteError } =
+        await supabaseAdmin.auth.admin.deleteUser(userId);
+
+      if (deleteError) {
+        console.error("Failed to delete auth user:", deleteError);
+        res.status(500).json({ error: "Failed to delete account" });
+        return;
+      }
+
+      res.json({ message: "Account deleted successfully" });
+    } catch (err) {
+      console.error("Account deletion error:", err);
+      res.status(500).json({ error: "Internal server error" });
+    }
+  }
+);
+
 // POST /auth/seed-test — Create test account for App Store review
 router.post("/seed-test", async (req: Request, res: Response) => {
   const seedKey = req.headers["x-seed-key"];
