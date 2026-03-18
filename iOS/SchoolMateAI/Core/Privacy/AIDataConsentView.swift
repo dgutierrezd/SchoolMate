@@ -34,28 +34,28 @@ struct AIDataConsentView: View {
                     ConsentSection(
                         icon: "doc.text.magnifyingglass",
                         title: "ai_consent_data_title".localized,
-                        body: "ai_consent_data_body".localized
+                        content: "ai_consent_data_body".localized
                     )
 
                     // MARK: - Who receives the data
                     ConsentSection(
                         icon: "server.rack",
                         title: "ai_consent_recipient_title".localized,
-                        body: "ai_consent_recipient_body".localized
+                        content: "ai_consent_recipient_body".localized
                     )
 
                     // MARK: - How the data is used
                     ConsentSection(
                         icon: "sparkles",
                         title: "ai_consent_use_title".localized,
-                        body: "ai_consent_use_body".localized
+                        content: "ai_consent_use_body".localized
                     )
 
                     // MARK: - Data not used for training
                     ConsentSection(
                         icon: "lock.shield.fill",
                         title: "ai_consent_protection_title".localized,
-                        body: "ai_consent_protection_body".localized
+                        content: "ai_consent_protection_body".localized
                     )
 
                     // MARK: - Privacy Policy link
@@ -131,7 +131,7 @@ struct AIDataConsentView: View {
 private struct ConsentSection: View {
     let icon: String
     let title: String
-    let body: String
+    let content: String
 
     var body: some View {
         VStack(alignment: .leading, spacing: AppSpacing.xs) {
@@ -143,7 +143,7 @@ private struct ConsentSection: View {
                     .font(.appHeadline)
                     .foregroundStyle(Color.textPrimary)
             }
-            Text(body)
+            Text(content)
                 .font(.appBody)
                 .foregroundStyle(.secondary)
                 .fixedSize(horizontal: false, vertical: true)
